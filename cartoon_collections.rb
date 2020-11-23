@@ -16,16 +16,28 @@ def long_planeteer_calls(planeteer_calls)
   planeteer_calls.any?{|call| call.length > 4}
 end
 
+# def find_valid_calls(planeteer_calls)
+#   valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
+#   # Use an Enumerable to check if any elements in the passed in array match the valid calls listed above 
+#   # Return the first valid call found, or return nil if no valid calls are found
+#   planeteer_calls.each do |call|
+#     valid_calls.each do |valid_call|
+#       if call == valid_call
+#         return call
+#       end
+#     end
+#   end
+#   return nil
+# end
+
 def find_valid_calls(planeteer_calls)
   valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
-  # Use an Enumerable to check if any elements in the passed in array match the valid calls listed above 
-  # Return the first valid call found, or return nil if no valid calls are found
-  planeteer_calls.each do |call|
-    valid_calls.each do |valid_call|
-      if call == valid_call
-        return call
-      end
+  planeteer_calls.each{|call|
+    valid_calls.each{|valid_call|
+    if call == valid_call
+      return call
     end
-  end
+    }
+  }
   return nil
 end
